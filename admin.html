@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="css/css-bootstrap.min.css">
+  <link rel="stylesheet" href="css/css-fontawesome.css">
+  <link rel="stylesheet" href="css/css-slick.css">
+  <link rel="stylesheet" href="css/css-lightgallery.min.css">
+  <link rel="stylesheet" href="css/css-animate.css">
+  <link rel="stylesheet" href="css/css-style.css">
+  <link rel="icon" href="favicons/img-favicon.png">
+</head>
+<body>
+
+    <section class="st-hero st-style2 st-bg st-dynamic-bg st-ripple-version" data-src="images/hero-bg-1.png">
+        <div class="container">
+          <div class="st-hero-text">
+            <div class="st-author"><img src="images/HERO BRO.jpg" alt=""></div>
+          </div>
+        <button class="st-btn st-style1 st-color1" style="background-color: aqua;" id="blog-adder">Blog Adder</button>
+
+        <button  class="st-btn st-style1 st-color1" style="background-color: aqua;"  id="blog-management">Blog Management</button>
+    
+    <script>
+        document.getElementById('blog-adder').addEventListener('click', function() {
+            window.location.href = "blog-adder.html";
+        
+        });
+
+        document.getElementById('blog-management').addEventListener('click', function() {
+            window.location.href = "blog-management.html";
+        
+        });
+    </script>
+
+<script src="email.js"></script>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/jquery.slick.min.js"></script>
+  <script src="js/lightgallery.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/ripples.min.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

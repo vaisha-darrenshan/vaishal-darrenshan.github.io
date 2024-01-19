@@ -1,0 +1,70 @@
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+
+<link rel="stylesheet" href="css/css-bootstrap.min.css">
+
+<link rel="stylesheet" href="css/css-fontawesome.css">
+<link rel="stylesheet" href="css/css-slick.css">
+<link rel="stylesheet" href="css/css-lightgallery.min.css">
+<link rel="stylesheet" href="css/css-animate.css">
+<link rel="stylesheet" href="css/css-style.css">
+<link rel="icon" href="favicons/img-favicon.png">
+</head>
+<body>
+
+  <section class="st-hero st-style2 st-bg st-dynamic-bg st-ripple-version" data-src="images/hero-bg-1.png">
+      <div class="container">
+        <div class="st-hero-text">
+          <div class="st-author"><img src="images/HERO BRO.jpg" alt=""></div>
+<form id="add-blog-post">
+    <div class="st-form-field" style="width: 50%; display: inline-flex">
+    <input type="text" id="title" name="title" placeholder="title"><br>
+</div>
+<div class="st-form-field" style="width: 50%; display: inline-flex">
+    <input type="text" id="author" name="author" placeholder="author name"><br>
+</div>
+    <div class="st-form-field" style="width: 50%; display: inline-flex">
+    <input type="date" id="publishDate" name="publishDate" placeholder="Publish date"><br>
+</div>
+    <div class="st-form-field" style="width: 50%; display: inline-flex">
+    <input type="text" id="imageUrl" name="imageUrl" placeholder="image url">
+</div><br>
+<input type="submit" class="st-btn st-style1 st-color1" value="Submit">
+
+  </form>
+  <script>document.getElementById('add-blog-post').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var db = firebase.firestore();
+    var title = document.getElementById('title').value;
+    var author = document.getElementById('author').value;
+    var publishDate = document.getElementById('publishDate').value;
+    var imageUrl = document.getElementById('imageUrl').value;
+
+    db.collection('blogPosts').add({
+        title: title,
+        author: author,
+        publishDate: publishDate,
+        imageUrl: imageUrl
+    }).then(function(docRef) {
+        console.log('Document written with ID: ', docRef.id);
+    }).catch(function(error) {
+        console.error('Error adding document: ', error);
+    });
+});
+
+    </script>
+  <script src="js/email.js"></script>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/jquery.slick.min.js"></script>
+  <script src="js/lightgallery.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/ripples.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="/js/blogpost.js"></script>
+  
+  
+  
